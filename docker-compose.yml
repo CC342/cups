@@ -1,0 +1,14 @@
+services:
+  cups:
+    image: jysky007/cups:v1
+    container_name: cups
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+      - ~/airprint_data/config:/config
+      - ~/airprint_data/services:/services
+      - /mnt/docker/cups/scripts:/root
+    environment:
+      - CUPSADMIN=admin
+      - CUPSPASSWORD=adminadmin
