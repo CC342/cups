@@ -9,6 +9,7 @@ services:
       - ~/airprint_data/config:/config
       - ~/airprint_data/services:/services
       - /mnt/docker/cups/scripts:/root
+      #把airprint-generate.py  printer-update.sh  run_cups.sh 放到/mnt/docker/cups/scripts文件夹里面
     environment:
       - CUPSADMIN=admin
       - CUPSPASSWORD=adminadmin
